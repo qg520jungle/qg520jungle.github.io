@@ -3,5 +3,3 @@
 *.log
 /res/global.css
 package.json
-/js/jquery-1.11.3.js
-/js/vue.js
