@@ -17,8 +17,8 @@
             </div>
             <div class="m-nav">
                 <ul class="f-cb">
-                    <li v-bind:class="{ 'z-active': state==0 }" ><span href="javascript:void(0);" v-on:click="_switch(0)" >首页</span></li>
-                    <li v-bind:class="{ 'z-active': state==1 }"  ><a href="javascript:;" v-on:click="_switch(1)" >花生</a></li>
+                    <li v-bind:class="{ 'z-active': state==0 }" ><a href="javascript:void(0);" v-on:click="_switch(0)" >首页</a></li>
+                    <li v-bind:class="{ 'z-active': state==1 }"  ><a href="javascript:void(0);" v-on:click="_switch(1)" >花生</a></li>
                     <li v-bind:class="{ 'z-active': state==2 }" ><a href="javascript:void(0);" v-on:click="_switch(2)" >联系我</a></li>
                 </ul>
             </div>
@@ -27,9 +27,9 @@
             <div class="m-tips" v-if="state==0">
                 在这里跟着祥庚一起学习吧~
                 <br /> 首先是Vue，我会把这个网站搭起来的
-                <br />经历写在这里<a href="javascript:void(0);" class="s-tips" v-on:click="switch(1)" >[OT_花生]</a>，希望我们共同进步~！！！
+                <br />经历写在这里<a href="javascript:void(0);" class="s-tips" v-on:click="_switch(1)" >[OT_花生]</a>，希望我们共同进步~！！！
                 <p class="f-tr">
-                    from <a href="javascript:void(0);" class="s-tips" v-on:click="switch(2)">[祥庚]</a>
+                    from <a href="javascript:void(0);" class="s-tips" v-on:click="_switch(2)">[祥庚]</a>
                 </p>
                 <div>
                     {{ message }}
@@ -69,7 +69,7 @@
                       <li>这个问题跟着前两个问题，如何将所有的blog的title搜索一份整理成一个目录呢？</li>
                     </ol>
                     <p>卧槽~这么说问题好多，【这只是我看着页面想了2分钟发现的问题】</p>
-                    <p>行吧，就到这里吧，欢迎来到<a href="javascript:void(0);" v-on:click="switch(0)" class="s-tips">[祥庚的blog]</a>下面开始整理思路，看看这之前我都做了什么
+                    <p>行吧，就到这里吧，欢迎来到<a href="javascript:void(0);" v-on:click="_switch(0)" class="s-tips">[祥庚的blog]</a>下面开始整理思路，看看这之前我都做了什么
                     </p>
                   </div>
                   <div class="m-blog" v-if="blogs==1">
