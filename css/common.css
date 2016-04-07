@@ -94,6 +94,16 @@ a, a:hover {
   color: #5e5959
 }
 
+.u-label{
+  cursor:pointer;
+}
+.s-logo{
+  font-size: 36px;
+  color: #3399cc;
+}
+.s-tips,.s-tips:hover{
+  color: #007fff;
+}
 
 .f-cb:after, .f-cbli li:after {
   display: block;
@@ -108,13 +118,45 @@ a, a:hover {
   zoom: 1
 }
 
-.u-label{
-  cursor:pointer;
+
+
+body{
+  width:100%;
+}
+.g-head{
+  width: 1200px;
+  margin: 0 auto;
+}
+.g-body{
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
 }
 
-.g-body{
+.m-logo{
   margin-top: 20px;
-  margin-left: 20px;
+  background-color: #d8d8bf;
+  padding:20px;
+
+}
+.m-nav{
+  background-color: #ccc;
+  padding-left: 20px;
+}
+.m-nav li{
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  padding:10px;
+}
+.m-tips{
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 700;
+
 }
 .m-suspend{
 	width:87px;
