@@ -1,47 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>This is from Jungle</title>
-  <link rel="stylesheet" href="./css/common.css">
-  <script src="./js/jquery-1.11.3.js"></script>
-  <script src="./js/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>This is from Jungle</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script src="./js/vue.js"></script>
 </head>
+
 <body>
-  <div class="g-head">
-    <div class="m-logo">
-      <span class="s-logo">祥庚的blog</span>
-    </div>
-    <div class="m-nav">
-      <ul class="f-cb">
-        <li c><a href="javascript:void(0);">首页</a></li>
-        <li><a href="javascript:void(0);">花生</a></li>
-        <li><a href="javascript:void(0);">联系我</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="g-body">
-    <div class="m-tips">
-      在这里跟着祥庚一起学习吧~<br />
-      首先是Vue，我会把这个网站搭起来的<br />经历写在这里<a href="javascript:void(0);" class="s-tips">[OT_花生]</a>，希望我们共同进步~！！！
-    </div>
-    <h1>do vue</h1>
     <div id="app">
-        {{ message }}
+        <div class="g-head">
+            <div class="m-logo">
+                <span class="s-logo">祥庚的blog</span>
+            </div>
+            <div class="m-nav">
+                <ul class="f-cb">
+                    <li v-bind:class="{ 'z-active': state==0 }" ><a href="javascript:void(0);" v-on:click="switch(0)" >首页</a></li>
+                    <li v-bind:class="{ 'z-active': state==1 }"  ><a href="javascript:void(0);" v-on:click="switch(1)" >花生</a></li>
+                    <li v-bind:class="{ 'z-active': state==2 }" ><a href="javascript:void(0);" v-on:click="switch(2)" >联系我</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="g-body">
+            <div class="m-tips" v-if="state==0">
+                在这里跟着祥庚一起学习吧~
+                <br /> 首先是Vue，我会把这个网站搭起来的
+                <br />经历写在这里<a href="javascript:void(0);" class="s-tips" v-on:click="switch(1)" >[OT_花生]</a>，希望我们共同进步~！！！
+                <p class="f-tr">
+                    from <a href="javascript:void(0);" class="s-tips" v-on:click="switch(2)">[祥庚]</a>
+                </p>
+                <div>
+                    {{ message }}
+                </div>
+            </div>
+            <div class="m-blog-list f-cb" v-if="state==1">
+                <div class="m-list-left f-fl">
+                  这里是blog列表
+                <ul class="m-list">
+                  <li class="" v-on:click="blog(0)">
+                    <div class="u-classify fl">[心情]</div>
+                    <div class="u-title am">第一份blog写的是心情</div>
+                    <div class="u-note fr">in 2016/4/7</div>
+                  </li>
+                  <li class="" v-on:click="blog(1)">
+                    <div class="u-classify fl">[vue]</div>
+                    <div class="u-title am">从开始到现在</div>
+                    <div class="u-note fr">in 2016/4/7</div>
+                  </li>
+                </ul>
+                </div>
+                <div class="m-wrap-right f-fl">
+                  <div class="m-blog" v-if="blogs==0">
+                    <h3>这就是我的第一份blog了</h3>
+                    <p>
+                      说真的，心情还是很激动的，终于看到自己的东西在网上了，虽然丑了点儿，毕竟是自己写的
+                    </p>
+                    <p>
+                      然后就发现自己很多的不足，哎呀妈呀~
+                    </p>
+                    <p>
+                      列个表吧~
+                    </p>
+                    <ol>
+                      <li >需要实现默认显示最新的blog</li>
+                      <li>需要新的文件写blog添加到这个文件中，不然都在这里写这个文件将会非常大，不好维护</li>
+                      <li>这个问题跟着前两个问题，如何将所有的blog的title搜索一份整理成一个目录呢？</li>
+                    </ol>
+                    <p>卧槽~这么说问题好多，【这只是我看着页面想了2分钟发现的问题】</p>
+                    <p>行吧，就到这里吧，欢迎来到<a href="javascript:void(0);" v-on:click="switch(0)" class="s-tips">[祥庚的blog]</a>下面开始整理思路，看看这之前我都做了什么
+                    </p>
+                  </div>
+                  <div class="m-blog" v-if="blogs==1">
+                    <h3>从开始到现在</h3>
+                    <p>
+                      从开始到现在，我都做了些什么？
+                    </p>
+                    <p>
+                      略去基础的HTML CSS javascript部分，开始，从个人blog说起
+                    </p>
+                    <ol>
+                      <li>
+                        <p>利用github建立个人blog</p>
+                        <p>
+                          这里给大家提供一个链接，简单5步就可以got it!
+                          <a href="https://pages.github.com/" target="_block" class="s-link" >https://pages.github.com/</a>
+                        </p>
+                      </li>
+                      <li>
+                        <p>搭建一个gulp项目</p>
+                        <p>
+                          正如我所上传的代码<a href="https://github.com/qg520jungle/qg520jungle.github.io" target="_block" class="s-link" >https://github.com/qg520jungle/qg520jungle.github.io</a><br />编辑package.json文件 利用npm安装所需的依赖，之后编辑gulpfile.js文件得到自己的环境<br /><span class="s-note">可以实现保存刷新页面，自动编译less文件等等功能</span><br />
+                          具体可阅读相关文档<a href="https://www.npmjs.com/" target="_block" class="s-link" >npm</a>  &nbsp;  <a href="http://www.gulpjs.com.cn/" target="_block" class="s-link" >gulp</a>
+                        </p>
+                      </li>
+                      <li>
+                        <p>我的Vue从这里开始</p>
+                        <p>
+                          参考<a href="http://cn.vuejs.org/guide/index.html" target="_block" class="s-link" >Vue.js 教程</a><br />
+                        </p>
+                        <p>
+                          实现导航<br />
+                          <span class="s-note">切换导航，显示不同的模块</span><br />
+                          利用 v-if 来实现，<br />
+                          给每个导航标签一个状态如果状态成立则显现 v-if="state==0"，通过 v-on:click="state(1)" 单击事件更改状态值，依此实现点击切换
+                        </p>
+                        <p>
+                          今天就是这么多啦~我会时刻修改我的blog，会把这个网页做的非常的棒的，欢迎关注~
+                        </p>
+                      </li>
+                    </ol>
+                    
+                  </div>
+                </div>
+                
+            </div>
+            <div class="m-author" v-if="state==2">
+                我的联系方式
+                <dl class="m-info-list f-cb">
+                  <dt>邮箱：</dt>
+                  <dd>bothqia@126.com</dd>
+                  <dt>微信：</dt>
+                  <dd>364169518</dd>
+                  <dt>称呼：</dt>
+                  <dd>祥庚</dd>
+                  <dt>还有：</dt>
+                  <dd>还没有</dd>
+                </dl>
+                
+            </div>
+            <div class="g-foot"></div>
+        </div>
     </div>
-    <p>组件化的vue</p>
-  </div>
-  <div class="g-foot"></div>
-
-  
-
-  <script>
+    <script>
     new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue.js!'
-      }
-    })
-  </script>
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                state: 1,
+                blogs: 1
+            },
+            methods: {
+              switch:function (state) {
+                // 方法内 `this` 指向 vm
+                this.state=state
+                //alert('当前状态 ' + this.state + '!')
+                // `event` 是原生 DOM 事件
+                //alert(event.target.tagName)
+              },
+              blog:function (s) {
+                // 方法内 `this` 指向 vm
+                this.blogs=s
+                //alert('当前状态 ' + this.state + '!')
+                // `event` 是原生 DOM 事件
+                //alert(event.target.tagName)
+              }
+            }
+        })
+        //首页 组件 也是继承app的
+    </script>
 </body>
+
 </html>

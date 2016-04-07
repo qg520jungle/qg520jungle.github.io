@@ -1,111 +1,185 @@
-/*张祥庚，用于制作和练习*/
-/*bothqia@126.com */
-/*guangzhou*/
-/*2016.3.8*/
-
+/* 张祥庚，用于制作blog */
+/* bothqia@126.com */
+/* guangzhou */
+/* 2016.4.7 */
+/* 版本0.0.2 */
+/* ps:版本0.0.1起始于 2016.3.8 */
 /*reset*/
-blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+* {
   margin: 0;
-  padding: 0
+  padding: 0;
+  box-sizing: border-box;
 }
-
-address, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block
+html {
+  font-size: 62.5%;
+  height: 100%;
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0
+body {
+  min-width: 320px;
+  height: 100%;
+  font-size: 2.8rem;
+  color: #2c2c2c;
+  width: 100%;
+  background: #fefefe;
+  font-family: "Microsoft YaHei";
+  position: relative;
 }
-
-caption, th {
-  text-align: left;
-  font-weight: 400
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  font-size: 2.8rem;
 }
-
-abbr, body, fieldset, html, iframe, img {
-  border: 0
+input,
+select {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: 0;
+  -webkit-appearance: none;
 }
-
-address, cite, dfn, em, i, var {
-  font-style: normal
+input::-webkit-input-placeholder {
+  color: #606060;
 }
-
-[hidefocus], summary {
-  outline: 0
-}
-
 li {
   list-style: none;
 }
-
-h1, h2, h3, h4, h5, h6, small {
-  font-size: 100%;
-  font-weight: 400
+a,
+a:hover {
+  color: #2c2c2c;
+  text-decoration: none;
 }
-
-sub, sup {
-  font-size: 83%
+i {
+  font-style: inherit;
 }
-
-code, kbd, pre, samp {
-  font-family: inherit
+input::-webkit-input-placeholder {
+  color: #c7c7c7;
 }
-
-q:after, q:before {
-  content: none
+input:-moz-placeholder {
+  color: #c7c7c7;
 }
-
-textarea {
-  overflow: auto;
-  resize: none
+.u-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #7fff00;
+  color: #333;
 }
-
-label, summary {
-  cursor: default
+.s-title {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
-
-a, button {
-  cursor: pointer;
-  border: 0
+.s-panel {
+  font-size: 1.6rem;
 }
-
-b, em, strong {
-  font-weight: 700
-}
-
-a, a:hover, del, ins, s, u {
-  text-decoration: none
-}
-
-body, button, input, keygen, legend, select, textarea {
-  font: 12px/1.14 arial, \5b8b\4f53;
-  color: #5e5959;
-  outline: 0;
-  line-height:1.14!important;
-}
-
-body {
-  background: #fefefe;
-  font-family: "Microsoft YaHei", \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53
-}
-
-a, a:hover {
-  color: #5e5959
-}
-
-.u-label{
-  cursor:pointer;
-}
-.s-logo{
+.s-logo {
   font-size: 36px;
   color: #3399cc;
 }
-.s-tips,.s-tips:hover{
+.s-tips,
+.s-tips:hover {
   color: #007fff;
 }
-
-.f-cb:after, .f-cbli li:after {
+.s-link,
+.s-link:hover {
+  color: #38b0de;
+  text-decoration: underline;
+}
+.s-note {
+  color: #ccc;
+}
+.u-icon {
+  display: inline-block;
+}
+.u-label {
+  cursor: pointer;
+}
+/* 箭头 */
+.u-popover .arrow,
+.u-popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.u-popover .arrow {
+  border-width: 11px;
+}
+.u-popover .arrow:after {
+  content: "";
+  border-width: 10px;
+}
+.u-popover.top .arrow {
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-color: #999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  border-bottom-width: 0;
+}
+.u-popover.top .arrow:after {
+  bottom: 1px;
+  margin-left: -10px;
+  content: " ";
+  border-top-color: #fff;
+  border-bottom-width: 0;
+}
+.u-popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-right-color: #999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+  border-left-width: 0;
+}
+.u-popover.right .arrow:after {
+  bottom: -10px;
+  left: 1px;
+  content: " ";
+  border-right-color: #fff;
+  border-left-width: 0;
+}
+.u-popover.bottom .arrow {
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #c2c2c2;
+}
+.u-popover.bottom .arrow:after {
+  top: 1px;
+  margin-left: -10px;
+  content: " ";
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+.u-popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #c2c2c2;
+}
+.u-popover.left .arrow:after {
+  right: 1px;
+  bottom: -10px;
+  content: " ";
+  border-right-width: 0;
+  border-left-color: #fff;
+}
+.u-input {
+  display: inline-block;
+  width: 94.7%;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding-left: 42px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.f-cb:after,
+.f-cbli li:after {
   display: block;
   clear: both;
   visibility: hidden;
@@ -113,79 +187,199 @@ a, a:hover {
   overflow: hidden;
   content: ".";
 }
-
-.f-cb, .f-cbli li {
-  zoom: 1
+.f-cb,
+.f-cbli li {
+  zoom: 1;
 }
-
-
-
-body{
-  width:100%;
+.f-fl {
+  float: left;
 }
-.g-head{
+.f-fr {
+  float: right;
+}
+.f-ib {
+  display: inline-block;
+}
+.f-tc {
+  text-align: center;
+}
+.f-tr {
+  text-align: right;
+}
+.g-head {
   width: 1200px;
   margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-.g-body{
+.g-body {
   width: 1200px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #efefef;
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  top: 128px;
+  left: 0;
+  right: 0;
 }
-
-.m-logo{
-  margin-top: 20px;
+.m-logo {
   background-color: #d8d8bf;
-  padding:20px;
-
+  padding: 20px;
 }
-.m-nav{
+.m-nav {
   background-color: #ccc;
   padding-left: 20px;
 }
-.m-nav li{
+.m-nav li {
   float: left;
-  height: 20px;
-  line-height: 20px;
   font-size: 16px;
-  padding:10px;
+  padding: 10px;
 }
-.m-tips{
+.m-nav .z-active {
+  background-color: #a8a8a8;
+}
+.m-nav .z-active a {
+  color: #fff;
+}
+.m-tips {
   width: 350px;
   margin: 0 auto;
   margin-top: 50px;
   font-size: 20px;
   font-weight: 700;
-
 }
-.m-suspend{
-	width:87px;
+.m-list-left {
+  width: 350px;
+  overflow: hidden;
 }
-.m-suspend .yao{
-	display:none;
-	font-size:0;
-	height:85px;
-	overflow:hidden;
+.m-wrap-right {
+  width: 750px;
+  height: 100%;
+  overflow: auto;
+  margin-left: 40px;
+  border: 2px solid #e8e8e8;
 }
-.m-suspend .cc{
-	display:block;
-	border:4px solid #c90028;
-	border-left: 3px solid #c90028;
-	margin-left: 1px;
-	border-top:0;
+.m-blog {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
 }
-.m-box-tj .tj li{
+.m-blog h3 {
+  font-size: 26px;
+}
+.m-blog p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.m-blog ol {
+  list-style-type: decimal;
+  margin-left: 30px;
+}
+.m-blog ol li {
+  list-style: inherit;
+}
+.m-blog-list {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.m-list {
+  font-size: 14px;
+  font-weight: 100;
+}
+.m-list li {
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 2px solid #e8e8e8;
+}
+.m-list li .fl {
+  position: absolute;
+  width: 50px;
+  left: 5px;
+  top: 6px;
+}
+.m-list li .fr {
+  position: absolute;
+  width: 100px;
+  right: 5px;
+  top: 6px;
+  text-align: right;
+}
+.m-list li .ar {
+  position: absolute;
+  width: 100%;
+  left: 55px;
+  top: 6px;
+}
+.m-list li .al {
+  position: absolute;
+  width: 100%;
+  right: 105px;
+  top: 6px;
+}
+.m-list li .am {
+  position: absolute;
+  width: 100%;
+  left: 55px;
+  top: 6px;
+}
+.m-author {
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.m-info-list {
+  margin-top: 20px;
+}
+.m-info-list dt,
+.m-info-list dd {
+  float: left;
+}
+.m-info-list dt {
+  width: 30%;
+}
+.m-info-list dd {
+  width: 70%;
+}
+.m-suspend {
+  width: 87px;
+}
+.m-suspend .yao {
+  display: none;
+  font-size: 0;
+  height: 85px;
+  overflow: hidden;
+}
+.m-suspend .cc {
+  display: block;
+  border: 4px solid #c90028;
+  border-left: 3px solid #c90028;
+  margin-left: 1px;
+  border-top: 0;
+}
+.m-box-tj .tj li {
   float: left;
   margin-right: 10px;
-  padding:5px;
-  border:1px solid #3399CC;
+  padding: 5px;
+  border: 1px solid #3399CC;
   background-color: #00FFFF;
 }
-.m-box-yx .yx li{
+.m-box-yx .yx li {
   float: left;
   margin-right: 10px;
-  padding:5px;
-  border:1px solid #ff7f00;
+  padding: 5px;
+  border: 1px solid #ff7f00;
   background-color: #cfb53b;
 }
-
