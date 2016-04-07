@@ -17,9 +17,9 @@
             </div>
             <div class="m-nav">
                 <ul class="f-cb">
-                    <li v-bind:class="{ 'z-active': state==0 }" ><a href="javascript:void(0);" v-on:click="switch(0)" >首页</a></li>
-                    <li v-bind:class="{ 'z-active': state==1 }"  ><a href="javascript:void(0);" v-on:click="switch(1)" >花生</a></li>
-                    <li v-bind:class="{ 'z-active': state==2 }" ><a href="javascript:void(0);" v-on:click="switch(2)" >联系我</a></li>
+                    <li v-bind:class="{ 'z-active': state==0 }" ><span href="javascript:void(0);" v-on:click="_switch(0)" >首页</span></li>
+                    <li v-bind:class="{ 'z-active': state==1 }"  ><a href="javascript:;" v-on:click="_switch(1)" >花生</a></li>
+                    <li v-bind:class="{ 'z-active': state==2 }" ><a href="javascript:void(0);" v-on:click="_switch(2)" >联系我</a></li>
                 </ul>
             </div>
         </div>
@@ -142,7 +142,7 @@
                 blogs: 1
             },
             methods: {
-              switch:function (state) {
+              _switch:function (state) {
                 // 方法内 `this` 指向 vm
                 this.state=state
                 //alert('当前状态 ' + this.state + '!')
